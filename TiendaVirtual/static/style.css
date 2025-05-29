@@ -1,0 +1,371 @@
+/* ===================================== */
+/*         Elegant Reset & Global Styles */
+/* ===================================== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  line-height: 1.6;
+  color: #444;
+  background: #fdfdfd;
+}
+
+/* ===================================== */
+/*      FORMULARIO DE CONTACTO         */
+/* ===================================== */
+.appointment-form {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 40px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.appointment-form h2 {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2c3e50;
+  letter-spacing: 0.5px;
+}
+
+.appointment-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.appointment-form input[type="text"],
+.appointment-form input[type="email"],
+.appointment-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.appointment-form input:focus,
+.appointment-form textarea:focus {
+  border-color: #2c3e50;
+  box-shadow: 0 0 6px rgba(44, 62, 80, 0.3);
+  outline: none;
+}
+
+.appointment-form button {
+  padding: 12px;
+  width: 100%;
+  background-color: #2c3e50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.appointment-form button:hover {
+  background-color: #1a252f;
+  transform: translateY(-2px);
+}
+
+/* ===================================== */
+/*       HEADER Y NAVEGACIÓN            */
+/* ===================================== */
+header {
+  background: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Imagen del logo */
+header img {
+  max-width: 150px;
+}
+
+/* Redes sociales */
+header .social-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+header .social-icons a {
+  margin: 5px;
+  transition: transform 0.3s;
+}
+
+header .social-icons a:hover {
+  transform: scale(1.1);
+}
+
+/* Título del header */
+header .titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin: 15px 0;
+  color: #2c3e50;
+}
+
+/* Navegación */
+header nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+/* Iconos adicionales */
+header .icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+header .icons span a {
+  text-decoration: none;
+  color: #444;
+  font-size: 1.2rem;
+}
+
+/* ===================================== */
+/*             ASIDE / FILTROS          */
+/* ===================================== */
+aside {
+  background: #fff;
+  padding: 25px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+aside h2, 
+aside h3 {
+  margin-bottom: 15px;
+  font-family: 'Playfair Display', serif;
+  color: #2c3e50;
+}
+
+aside ul {
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+aside ul li a {
+  text-decoration: none;
+  color: #666;
+  transition: color 0.3s;
+}
+
+aside ul li a:hover {
+  color: #2c3e50;
+}
+
+aside select,
+aside input[type="range"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+aside .colors {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+aside .colors span {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.3s;
+}
+
+aside .colors span:hover {
+  border: 2px solid #2c3e50;
+}
+
+/* ===================================== */
+/*              PRODUCTOS               */
+/* ===================================== */
+main {
+  padding: 20px;
+}
+
+.productos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-body h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: #2c3e50;
+}
+
+.card-body img {
+  width: 100%;
+  border-radius: 4px;
+  transition: transform 0.3s;
+}
+
+.card-body img:hover {
+  transform: scale(1.05);
+}
+
+.card-body p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* ===================================== */
+/*           LOGIN / INICIAR SESIÓN     */
+/* ===================================== */
+.login-container {
+  max-width: 420px;
+  margin: 80px auto;
+  padding: 40px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.login-container h2 {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2c3e50;
+}
+
+.login-container form input[type="text"],
+.login-container form input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.login-container form input:focus {
+  border-color: #2c3e50;
+  box-shadow: 0 0 6px rgba(44, 62, 80, 0.3);
+  outline: none;
+}
+
+.login-container form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2c3e50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.login-container form button:hover {
+  background-color: #1a252f;
+  transform: translateY(-2px);
+}
+
+.login-container .extra {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-container .extra a {
+  color: #2c3e50;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.login-container .extra a:hover {
+  color: #1a252f;
+}
+
+/* ===================================== */
+/*                FOOTER                */
+/* ===================================== */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 30px;
+  font-size: 0.9rem;
+}
+
+/* ===================================== */
+/*                ANIMACIONES           */
+/* ===================================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===================================== */
+/*           RESPONSIVIDAD              */
+/* ===================================== */
+@media (max-width: 768px) {
+  header, aside, main, footer {
+    padding: 15px;
+  }
+  .productos-container {
+    grid-template-columns: 1fr;
+  }
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ericka-Calzados</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <img src="{{ url_for('static', filename='IMG/logo.png') }}" alt="Logo de Erica Calzados">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      <div style="margin-top: 10px;" class="social-icons">
+        <a href="https://www.instagram.com/erickacalzados" target="_blank">
+          <img src="{{ url_for('static', filename='IMG/instagram.jpg') }}" alt="Instagram" style="width: 30px; height: 30px; display: block; margin-bottom: 5px;">
+        </a>
+        <a href="https://www.facebook.com/tu_perfil" target="_blank">
+          <img src="{{ url_for('static', filename='IMG/facebook.png') }}" alt="Facebook" style="width: 30px; height: 30px; display: block; margin-bottom: 5px;">
+        </a>
+        <a href="https://www.tiktok.com/@erickacalzados" target="_blank">
+          <img src="{{ url_for('static', filename='IMG/tiktok.jpg') }}" alt="TikTok" style="width: 30px; height: 30px; display: block;">
+        </a>
+      </div>
+    </div>
+    <h1 class="titulo">Erica Calzados</h1>
+    <nav>
+      <!-- Navegación futura -->
+    </nav>
+    <div class="icons">
+      <span><a href="login">👤</a></span>
+      <span>❤</span>
+      <span><a href="contactos">✉️</a></span>
+    </div>
+  </header>
+
+  <aside>
+    <h2>Filtros</h2>
+    <ul>
+      <li><a href="productos">Mujeres</a></li>
+      <li><a href="productos">Infantil</a></li>
+      <li><a href="productos">Urbano</a></li>
+      <li><a href="productos">Formal</a></li>
+    </ul>
+    <label for="size">Seleccionar talla:</label>
+    <select id="size">
+      {% for talla in range(30, 51) %}
+        <option>{{ talla }}</option>
+      {% endfor %}
+    </select>
+    <div>
+      <label for="price">Precio:</label>
+      <input type="range" id="price" min="50" max="1000" step="5">
+      <span id="price-value">525</span>
+    </div>
+    <h3>Colores</h3>
+    <div class="colors">
+      <span style="background-color: cyan;"></span>
+      <span style="background-color: pink;"></span>
+      <span style="background-color: red;"></span>
+      <span style="background-color: orange;"></span>
+      <span style="background-color: yellow;"></span>
+      <span style="background-color: green;"></span>
+      <span style="background-color: white;"></span>
+      <span style="background-color: black;"></span>
+    </div>
+  </aside>
+
+  <main>
+    <div class="productos-container">
+      {% for p in data.products %}
+      <div class="card">
+        <div class="card-body">
+          <h1>{{ p.nombre }}</h1>
+          <img src="{{ url_for('static', filename='IMG/' + p.imagen) }}" alt="{{ p.nombre }}">
+          <p>{{ p.descripcion }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Ericka-Calzados - Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    // Mostrar valor dinámico del rango de precio
+    const priceRange = document.getElementById('price');
+    const priceValue = document.getElementById('price-value');
+    priceValue.textContent = priceRange.value;
+    priceRange.addEventListener('input', () => {
+      priceValue.textContent = priceRange.value;
+    });
+  </script>
+</body>
+</html>

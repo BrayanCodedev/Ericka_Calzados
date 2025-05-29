@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contactos</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  <script>
+    function sendToWhatsApp() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      const whatsappMessage = `Nombre: ${name}\nCorreo Electrónico: ${email}\nMensaje: ${message}`;
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=51939714246&text=${encodeURIComponent(whatsappMessage)}`;
+
+      window.open(whatsappUrl, '_blank');
+    }
+  </script>
+</head>
+<body style="background-color: #ffe6f2; font-family: Arial, sans-serif;">
+  <div class="appointment-form">
+    <h2>Contáctate con Nosotros</h2>
+    <form onsubmit="sendToWhatsApp(); return false;">
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+
+      <label for="email">Correo Electrónico:</label>
+      <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+
+      <label for="message">Mensaje:</label>
+      <textarea id="message" name="message" rows="4" placeholder="Escribe aquí cualquier detalle adicional..." required></textarea>
+
+      <button type="submit" style="margin-top: 15px;">Enviar por WhatsApp</button>
+    </form>
+  </div>
+</body>
+</html>

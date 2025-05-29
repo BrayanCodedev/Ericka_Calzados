@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body style="background-color: #f0f0f0; font-family: Arial, sans-serif;">
+  <div class="login-container">
+    <h2>Iniciar Sesión</h2>
+    <form method="POST" action="/login">
+      <!-- Si usas Flask-WTF: {{ formulario.hidden_tag() }} -->
+      <input type="text" name="username" class="form-control" placeholder="Usuario" autocomplete="username" required>
+      <input type="password" name="password" class="form-control" placeholder="Contraseña" autocomplete="current-password" required>
+      <button type="submit" class="form-button">Ingresar</button>
+    </form>
+    <div class="extra">
+      ¿No tienes cuenta? <a href="/registro">Regístrate</a>
+    </div>
+  </div>
+</body>
+</html>
